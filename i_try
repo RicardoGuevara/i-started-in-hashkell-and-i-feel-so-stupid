@@ -1,0 +1,29 @@
+#!/usr/local/bin/runhaskell
+
+{-
+main = do
+    line <- getLine
+    if null line
+        then return ()
+        else do
+            putStrLn $ reverseWords line
+            main
+reverseWords :: String -> String
+reverseWords = unwords . map reverse . words
+-}
+
+
+{-
+main = do 
+    a <- return "esta vaina"
+    b <- return "no funciona,"
+    c <- return "extraño java :("
+    putStrLn $ a ++ " " ++ b++ " " ++ c
+-}
+
+import Control.Monad
+main = do
+    c <- getChar
+    when (c /= ' ') $ do
+        putChar c
+        main
